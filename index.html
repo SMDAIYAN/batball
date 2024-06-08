@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Bat Ball Game</title>
+</head>
+<body>
+  <!-- slideshow starts here -->
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="./images/slide-1.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="./images/slide-2.jpg" style="width:100%">
+      
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="./images/slide-3.jpg" style="width:100%">
+ 
+    </div>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center; background-color: rgba(55, 159, 6, 0.916)">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+    
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
+    
+
+
+  <!-- button starts here -->
+  
+  <div class="button_container">
+    
+      <button  class="btn2" onclick="
+      let randomNumber = Math.random() * 3; 
+      let computerChoice;
+
+      if (randomNumber > 0 && randomNumber <= 1) {
+        computerChoice = `ব্যাটিং`
+      } 
+
+      else if (randomNumber > 1 && randomNumber <= 2) {
+        computerChoice = `বল`
+      } 
+
+      else {
+        computerChoice = `আউট`
+      };
+
+      let resultMsg;
+ 
+      if (computerChoice === `ব্যাটিং`) {
+        resultMsg = `ব্যাট ব্যাট বারি লেগে ভেঙ্গে গেছে` 
+      }
+      else if (computerChoice === `বল`) {
+        resultMsg = `তাওহিদ জিতেছে`
+      }
+
+      else (
+        resultMsg = `দাইয়ান জিতেছে`
+      );
+
+      alert(`তাওহিদ ব্যাটিং করেছে , দাইয়ান ${computerChoice} করেছে , ${resultMsg}`)
+
+    "><marquee behavior="" direction="">ব্যাটিং করুন</marquee></button>  
+
+
+      <button class="btn" onclick="
+      let randomNumber = Math.random() * 3; 
+      let computerChoice;
+
+      if (randomNumber > 0 && randomNumber <= 1) {
+        computerChoice = `ব্যাটিং`
+      } 
+
+      else if (randomNumber > 1 && randomNumber <= 2) {
+        computerChoice = `বল`
+      } 
+
+      else {
+        computerChoice = `আউট`
+      };
+
+      let resultMsg;
+
+      if (computerChoice === `ব্যাটিং`) {
+        resultMsg = `দাইয়ান জিতেছে`
+      }
+      else if (computerChoice === `বল`) {
+        resultMsg = `বল বল বারি লেগে ভেঙ্গে গেছে` 
+      }
+
+      else (  
+        resultMsg = `তাওহিদ জিতেছে` 
+      );
+
+      alert(`তাওহিদ বল করেছে, দাইয়ান ${computerChoice} করেছে , ${resultMsg}`)
+
+    "><marquee behavior="" direction="">বোলিং করুন</marquee></button> 
+  </div>
+
+
+
+</body>
+</html>
